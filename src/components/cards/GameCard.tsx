@@ -74,7 +74,7 @@ export function GameCard({ gameItem }: { gameItem: GameItemType }) {
                     controls: 0,
                     modestbranding: 1,
                     rel: 0,
-                    showinfo: 0,  // Deprecated, but included for completeness
+                    showinfo: 0,
                     fs: 0,
                   },
                 },

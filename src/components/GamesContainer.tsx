@@ -29,7 +29,9 @@ export function GamesContainer({ games, Icon, text, route, isHorizontal = false 
             <GameCard gameItem={game} />
           </div>)
         }
+      
         {
+          // for loading state
           games.length == 0 ? counter.map(count => <div key={count} className='m-3'>
             <Skeleton className="w-40 h-40 rounded-3xl bg-slate-400" />
             <Skeleton className="h-[24px] rounded-3xl w-full my-[10px] bg-slate-400" />
