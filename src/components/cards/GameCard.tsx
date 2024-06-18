@@ -36,14 +36,15 @@ export function GameCard({ gameItem }: { gameItem: GameItemType }) {
     setIsLoading(false);
   };
 
+
   return (
     <Link
       href={gameItem.url}
-      className="flex flex-col items-center justify-center m-2 transition-transform duration-300 transform hover:scale-110"
+      className="flex flex-col items-center justify-center m-3  duration-300 hover:scale-110"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className=" w-40 h-40">
+      <div className="relative w-40 h-40">
         <Image
           className="w-40 h-40 rounded-3xl"
           src={gameItem.assets.thumb}
@@ -54,7 +55,7 @@ export function GameCard({ gameItem }: { gameItem: GameItemType }) {
         {isHovered && gameItem.gamePreviews.en && (
           <>
             {isLoading && (
-              <div className="absolute inset-0 flex items-center justify-center  bg-opacity-75 rounded-3xl">
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-200 bg-opacity-75 rounded-3xl">
                 <div className="w-6 h-6 border-4 border-t-transparent border-gray-600 rounded-full animate-spin"></div>
               </div>
             )}
@@ -69,16 +70,24 @@ export function GameCard({ gameItem }: { gameItem: GameItemType }) {
               className="absolute top-0 left-0 rounded-3xl"
               config={{
                 youtube: {
-                  playerVars: { controls: 0, modestbranding: 1, rel: 0, showInfo: 0, fs: 0 },
+                  playerVars: {
+                    controls: 0,
+                    modestbranding: 1,
+                    rel: 0,
+                    showinfo: 0,  // Deprecated, but included for completeness
+                    fs: 0,
+                    
+                  },
                 },
               }}
             />
           </>
         )}
       </div>
-      <Link href={gameItem.url} className={`my-2 w-full rounded-full  transition-colors duration-300 flex flex-col items-center h-[46px] ${isHovered ? "bg-blue-700 text-white hover:bg-blue-900 " : ""}`}>
+
+      <Link href={gameItem.url} className={`my-2 w-full rounded-full transition-colors duration-300 flex flex-col items-center h-[48px] ${isHovered ? "bg-blue-700 text-white hover:bg-blue-800 " : ""}`}>
         {isHovered ? <p className=' font-bold'>Play Now</p> : " "}
-        <p className=" text-sm tracking-tight text-center">{gameItem.name.en}</p>
+        <p className="text-sm tracking-tight text-center">{gameItem.name.en}</p>
       </Link>
     </Link>
   );

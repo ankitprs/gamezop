@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Gamezop Landing Page - Assignment
+
+This project is a landing page for Gamezop, built as an assignment using the following tech stack:
+
+- **Next.js** (TypeScript)
+- **Libraries**:
+  - ShadCN for components
+  - React Query for data fetching
+  - Tailwind CSS for styling
+  - React Player for game previews on hover
+
+Live link: [Gamezop Landing Page](https://gamezop-ten.vercel.app/)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Ensure you have the necessary environment variables set up. Create a `.env` file based on the `.env.example` provided.
+
+Example:
+```env
+BACKEND_URL="https://pub.gamezop.com/v3/games?id=peSLSV"
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Install the dependencies:
+   ```bash
+   npm install
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+2. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-## Learn More
+3. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-To learn more about Next.js, take a look at the following resources:
+## Assignment Details
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Technical Requirements
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. The project should be built using Next.js and TypeScript. ✅
+2. Incorporate Progressive Web App (PWA) functionality into your application. ✅
+3. Your app should have a well-structured directory and exhibit features demonstrating best industry practices. ✅
+4. Leverage React Suspense for handling asynchronous operations, including data fetching. ✅
+5. Implement Server Components to efficiently render components server-side and send them to the client. ✅
 
-## Deploy on Vercel
+### Non-Technical Requirements
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. You don't need to incorporate every element of the original website in your version. For example, advertisements do not need to be rendered. ✅
+2. The final output should be a responsive website, ensuring a seamless user experience across various devices. ✅
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Additional Improvements
+
+- Added better search section. ✅
+- Included video previews on hover for each game. ✅
+- Made various visual enhancements to improve the overall aesthetic. ✅
+
+## Thank You
+
+Thank you for reviewing this project! If you have any questions or feedback, feel free to reach out.
