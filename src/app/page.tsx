@@ -1,17 +1,11 @@
-"use client"
 import { GameItemType } from "@/components/cards/GameCard";
 import { GamesContainer } from "@/components/GamesContainer";
 import { getGames } from "@/data/remote/apiCaller";
 import { categories } from "@/data/siteData/categories";
-import { REACT_QUERY_GAMES } from "@/utils/Constants";
-import { useQuery } from "@tanstack/react-query";
 
 
-export default function Home() {
-  const { data } = useQuery({
-    queryKey: [REACT_QUERY_GAMES],
-    queryFn: getGames
-  });
+export default async function Home() {
+  const data = await getGames()
 
   return (
     <div>

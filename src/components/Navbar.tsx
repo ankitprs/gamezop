@@ -1,9 +1,9 @@
-"use client"
+'use client'
 import Image from 'next/image'
 import { FaSearch } from "react-icons/fa";
 import { MdClear } from "react-icons/md";
 import { CategoryCard } from './cards/CategoryCard';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
 import {
@@ -14,8 +14,6 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command"
-import { useQuery } from '@tanstack/react-query';
-import { REACT_QUERY_GAMES } from '@/utils/Constants';
 import { getGames } from '@/data/remote/apiCaller';
 import { GameItemType } from './cards/GameCard';
 import { categories } from '@/data/siteData/categories';
@@ -26,11 +24,11 @@ export function Navbar() {
   const router = useRouter()
   const [isSearching, setIsSearching] = useState(false)
   const [searchKeyword, setSearchKeyword] = useState("")
+  const [data, setData] = useState<any>()
 
-  const { data } = useQuery({
-    queryKey: [REACT_QUERY_GAMES],
-    queryFn: getGames
-  });
+  useEffect(() => {
+    getGames().then(val => setData(val));
+  }, [])
 
 
   return (

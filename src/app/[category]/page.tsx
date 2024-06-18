@@ -1,26 +1,13 @@
-"use client"
 import { GameItemType } from '@/components/cards/GameCard'
 import { GamesContainer } from '@/components/GamesContainer'
 import { getGames } from '@/data/remote/apiCaller'
 import { categories } from '@/data/siteData/categories'
-import { REACT_QUERY_GAMES } from '@/utils/Constants'
-import { useQuery } from '@tanstack/react-query'
-import { useRouter } from 'next/navigation'
 import React from 'react'
 
 
-function GamesCategory({ params }: { params: { category: string } }) {
-  const router = useRouter()
-  const { data } = useQuery({
-    queryKey: [REACT_QUERY_GAMES],
-    queryFn: getGames
-  });
-
+async function GamesCategory({ params }: { params: { category: string } }) {
+  const data = await getGames()
   const currentRoute = categories.find(value => value.route == params.category)
-
-  if (currentRoute == undefined) {
-    router.push('/')
-  }
 
   return (
     <div className="">

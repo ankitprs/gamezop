@@ -5,7 +5,6 @@ This project is a landing page for Gamezop, built as an assignment using the fol
 - **Next.js** (TypeScript)
 - **Libraries**:
   - ShadCN for components
-  - React Query for data fetching
   - Tailwind CSS for styling
   - React Player for game previews on hover
 

@@ -76,7 +76,6 @@ export function GameCard({ gameItem }: { gameItem: GameItemType }) {
                     rel: 0,
                     showinfo: 0,  // Deprecated, but included for completeness
                     fs: 0,
-                    
                   },
                 },
               }}
@@ -85,10 +84,10 @@ export function GameCard({ gameItem }: { gameItem: GameItemType }) {
         )}
       </div>
 
-      <Link href={gameItem.url} className={`my-2 w-full rounded-full transition-colors duration-300 flex flex-col items-center h-[48px] ${isHovered ? "bg-blue-700 text-white hover:bg-blue-800 " : ""}`}>
+      <div className={`my-2 w-full rounded-full transition-colors duration-300 flex flex-col items-center h-[48px] ${isHovered ? "bg-blue-700 text-white hover:bg-blue-800 " : ""}`}>
         {isHovered ? <p className=' font-bold'>Play Now</p> : " "}
         <p className="text-sm tracking-tight text-center">{gameItem.name.en}</p>
-      </Link>
+      </div>
     </Link>
   );
 }
